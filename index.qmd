@@ -19,9 +19,9 @@ Include a _very brief_ summary of what you learnt in this class here.
 
 Today, I learnt the following concepts in class:
 
-1. Item 1
-1. Item 2
-1. Item 3
+1. The mosaic package is designed to facilitate the use of R in statistics and calculus instruction by providing a number of functions that make many common tasks fit into a common template
+1. Matrixes are filled by column.
+1. BY typing byrow = TRUE, you can have the matrix fill by row. 
 :::
 
 Provide more concrete details here. You can also use footenotes[^footnote] if you like
@@ -34,12 +34,14 @@ library(purrr)
 
 
 For example: 
-in class we learnt we learnt about the `map` function from the `purrr` package. 
+in class we learnt we learnt making matricies and how to format then to fill by row. 
+```{R}
+Brian <- matrix(
+  c(1,2,3,4,5,6,7,8,9,1,2,3),
+  nrow = 3,
+  byrow = TRUE
 
-
-```{R results='hide', fig.width=7, fig.height=7}
-par(mfrow=c(3, 3), mar=c(3.5, 3.5, 2, 1), mgp=c(2.4, 0.8, 0))
-map(1:9, function(i)rnorm(1000) %>% hist(., main=i, col=i))
+)
 ```
 
 
@@ -55,22 +57,17 @@ Include a _very brief_ summary of what you learnt in this class here.
 
 Today, I learnt the following concepts in class:
 
-1. Item 1
-1. Item 2
-1. Item 3
+1. When dealing with tidy data, each row will be unique.
+1. The library dplyr helps with data munipulation.
+1. Joins allow you to comine two datasets
 :::
 
 Provide more concrete details here, e.g., 
 
 In class we learnt how to use the `map` function to create multiple regression diagnostic plots
 
-```{R results='hide', fig.height=4}
-par(mfcol=c(2, 3), mar=c(3.5, 3.5, 2, 1), mgp=c(2.4, 0.8, 0))
-mtcars %>%
-  split(.$cyl) %>%
-  map(~ lm(mpg ~ wt, data = .x)) %>%
-  map(function(x)plot(x, which=c(1, 2)))
+```{R}
 ```
 
-
+I will take better notes in the future.
 [^footnote]: You can include some footnotes here
